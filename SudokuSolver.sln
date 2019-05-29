@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolver", "SudokuSolve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolver.Services", "SudokuSolver.Services\SudokuSolver.Services.csproj", "{4CF53370-C5E8-462F-A121-92C08EF9A87C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuSolver.Services.Test", "SudokuSolver.Services.Test\SudokuSolver.Services.Test.csproj", "{A9410024-3D0B-4664-A830-EDCB02CAA71B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4CF53370-C5E8-462F-A121-92C08EF9A87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CF53370-C5E8-462F-A121-92C08EF9A87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CF53370-C5E8-462F-A121-92C08EF9A87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9410024-3D0B-4664-A830-EDCB02CAA71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9410024-3D0B-4664-A830-EDCB02CAA71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9410024-3D0B-4664-A830-EDCB02CAA71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9410024-3D0B-4664-A830-EDCB02CAA71B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
