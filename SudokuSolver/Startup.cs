@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SudokuSolver.Services;
 
 namespace SudokuSolver
 {
@@ -31,6 +32,7 @@ namespace SudokuSolver
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<IUserInputToSudokuCellConverter, UserInputToSudokuCellConverter>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -57,7 +59,7 @@ namespace SudokuSolver
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Sudoku}/{action=Index}/{id?}");
             });
         }
     }

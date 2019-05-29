@@ -1,0 +1,17 @@
+﻿@model SudokuInputModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<form asp-action="Index" method="post">
+    <label asp-for="SudokuInput" />
+    <input asp-for="SudokuInput"/>
+
+    <input type="button" value="Submit"/>
+</form>
+
+@if (Model.Result.Any())
+{
+
+}

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SudokuSolver.Services
 {
-    public class UserInputToSudokuCellConverter
+    public class UserInputToSudokuCellConverter : IUserInputToSudokuCellConverter
     {
         public List<SudokuCell> Convert(List<int> input)
         {
