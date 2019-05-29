@@ -7,9 +7,9 @@ using System.Text;
 namespace SudokuSolver.Services.Test
 {
     [TestFixture]
-    public class ColumnMemberGetterTests
+    public class BlockMemberGetterTests
     {
-        private ColumnMemberGetter _columnMemberGetter;
+        private BlockMemberGetter _blockMemberGetter;
 
         public List<SudokuCell> _puzzleState { get; private set; }
 
@@ -19,47 +19,47 @@ namespace SudokuSolver.Services.Test
             _puzzleState = new List<SudokuCell>();
             for (int i = 0; i < 81; i++)
             {
-                _puzzleState.Add(new SudokuCell { Value = i });
+                _puzzleState.Add(new SudokuCell { Value = i});
             }
         }
 
         [SetUp]
         public void Setup()
         {
-            _columnMemberGetter = new ColumnMemberGetter();
+            _blockMemberGetter = new BlockMemberGetter();
         }
 
         [Test]
-        public void GetColumn_When1IsPassedIn_ReturnsListOfFirstColumn()
+        public void GetBlock_When0IsPassedIn_ReturnsListOfFirstBlock()
         {
             //arrange
-            var index = 1;
-            var expected = new List<int> { 1, 10, 19, 28, 37, 46, 55, 64, 73 };
+            var index = 0;
+            var expected = new List<int> { 0, 1, 2, 9, 10, 11, 18, 19, 20 };
 
             //act
-            var result = _columnMemberGetter.GetColumn(_puzzleState, index);
+            var result = _blockMemberGetter.GetBlock(_puzzleState, index);
 
             //assert
             result.Count.Should().Be(9);
-            for (var i = 0; i < 9; i++)
+            for (int i = 0; i < 9; i++)
             {
                 result.Should().ContainEquivalentOf<SudokuCell>(new SudokuCell { Value = expected[i] });
             }
         }
 
         [Test]
-        public void GetColumn_When23IsPassedIn_ReturnsListOfFifthColumn()
+        public void GetBlock_When23IsPassedIn_ReturnsListOfSecondBlock()
         {
             //arrange
             var index = 23;
-            var expected = new List<int> { 5, 14, 23, 32, 41, 50, 59, 68, 77 };
+            var expected = new List<int> { 3, 4, 5, 12, 13, 14, 21, 22, 23 };
 
             //act
-            var result = _columnMemberGetter.GetColumn(_puzzleState, index);
+            var result = _blockMemberGetter.GetBlock(_puzzleState, index);
 
             //assert
             result.Count.Should().Be(9);
-            for (var i = 0; i < 9; i++)
+            for (int i = 0; i < 9; i++)
             {
                 result.Should().ContainEquivalentOf<SudokuCell>(new SudokuCell { Value = expected[i] });
             }
