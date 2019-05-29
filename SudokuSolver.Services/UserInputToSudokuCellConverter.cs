@@ -9,10 +9,18 @@ namespace SudokuSolver.Services
         public List<SudokuCell> Convert(List<int> input)
         {
             var result = new List<SudokuCell>();
+
             foreach (var item in input)
             {
-                result.Add(new SudokuCell() { Value = item });
+                result.Add(
+                    new SudokuCell
+                    {
+                        Value = item,
+                        Fixed = item != 0
+                    }
+                );
             }
+
             return result;
         }
     }
