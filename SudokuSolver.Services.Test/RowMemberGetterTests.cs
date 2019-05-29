@@ -37,7 +37,7 @@ namespace SudokuSolver.Services.Test
             var index = 0;
 
             //act
-            var result = _rowMemberGetter.GetRows(_puzzleState, index);
+            var result = _rowMemberGetter.GetRow(_puzzleState, index);
 
             //assert
             result.Count.Should().Be(9);
@@ -54,7 +54,7 @@ namespace SudokuSolver.Services.Test
             var index = 23;
 
             //act
-            var result = _rowMemberGetter.GetRows(_puzzleState, index);
+            var result = _rowMemberGetter.GetRow(_puzzleState, index);
 
             //assert
             result.Count.Should().Be(9);
@@ -63,7 +63,5 @@ namespace SudokuSolver.Services.Test
                 result.Should().ContainEquivalentOf<SudokuCell>(new SudokuCell { Value = i });
             }
         }
-
-
     }
 }
