@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SudokuSolver.Services
 {
-    public class RowMemberGetter
+    public class RowMemberGetter : IRowMemberGetter
     {
         public List<SudokuCell> GetRow(List<SudokuCell> puzzleState, int index)
         {

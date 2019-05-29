@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SudokuSolver.Services
 {
-    public class ColumnMemberGetter
+    public class ColumnMemberGetter : IColumnMemberGetter
     {
         public List<SudokuCell> GetColumn(List<SudokuCell> puzzleState, int index)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SudokuSolver.Services
 {
-    public class BlockMemberGetter
+    public class BlockMemberGetter : IBlockMemberGetter
     {
         public List<SudokuCell> GetBlock(List<SudokuCell> puzzleState, int index)
         {
