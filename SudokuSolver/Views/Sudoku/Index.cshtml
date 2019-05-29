@@ -1,17 +1,35 @@
 ﻿@model SudokuInputModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Sudoku";
 }
 
-<h1>Index</h1>
+<h1>Sudoku</h1>
 <form asp-action="Index" method="post">
-    <label asp-for="SudokuInput" />
-    <input asp-for="SudokuInput"/>
+    <div class="form-group">
+        <label asp-for="SudokuInput" />
+        <input asp-for="SudokuInput" class="form-control" />
+    </div>
 
-    <input type="button" value="Submit"/>
+    <div class="btn-block">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </div>
 </form>
 
 @if (Model.Result.Any())
 {
+    <h4 class="mt-5">Results</h4>
+    <table class="table table-bordered results mt-2">
+        @for (var i = 0; i < 9; i++)
+        {
 
+            {
+                <tr>
+                    @foreach (var cell in Model.Result.Skip(i * 9).Take(9))
+                    {
+                        <td @Html.Raw(cell.Fixed ? "class=\" bg-danger\"" : "")>@cell.Value</td>
+                    }
+                </tr>
+            }
+        }
+    </table>
 }

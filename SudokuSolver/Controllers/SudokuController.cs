@@ -19,7 +19,7 @@ namespace SudokuSolver.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new SudokuInputModel());
         }
 
         [HttpPost]
@@ -33,7 +33,9 @@ namespace SudokuSolver.Controllers
 
             var convertedInput = _inputToSudokuCellConverter.Convert(inputList);
 
+            var viewModel = new SudokuInputModel { Result = convertedInput };
 
+            return View(viewModel);
         }
     }
 }

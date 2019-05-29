@@ -9,6 +9,6 @@ namespace SudokuSolver.Models
     public class SudokuInputModel
     {
         public string SudokuInput { get; set; }
-        public List<SudokuCell> Result { get; set; }
+        public List<SudokuCell> Result { get; set; } = new List<SudokuCell>();
     }
 }
